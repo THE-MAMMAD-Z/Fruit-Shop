@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+{% load static %}
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -18,14 +18,14 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
 </head>
 
 <body class="sub_page">
@@ -55,19 +55,19 @@
             <div class="d-flex  flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="{% url 'home:home' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">About </a>
+                  <a class="nav-link" href="{% url 'home:about' %}">About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="fruit.html">Our Fruit </a>
+                  <a class="nav-link" href="{% url 'fruit:fruits' %}">Our Fruit </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="testimonial.html">Testimonial</a>
+                  <a class="nav-link" href="{% url 'fruit:testmonial' %}">Testimonial</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="{% url 'home:contact' %}">Contact Us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Login</a>
@@ -101,18 +101,18 @@
           <div class="carousel-item active">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="images/client-img.png" alt="">
+                <img src="{% static 'images/ client-img..png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="images/left-quote.png" alt="">
+                  <img src="{% static 'images/ left-quote..png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="images/right-quote.png" alt=""> <br>
+                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -123,18 +123,18 @@
           <div class="carousel-item">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="images/client-img.png" alt="">
+                <img src="{% static 'images/ client-img..png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="images/left-quote.png" alt="">
+                  <img src="{% static 'images/ left-quote..png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="images/right-quote.png" alt=""> <br>
+                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -145,18 +145,18 @@
           <div class="carousel-item">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="images/client-img.png" alt="">
+                <img src="{% static 'images/ client-img..png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="images/left-quote.png" alt="">
+                  <img src="{% static 'images/ left-quote..png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="images/right-quote.png" alt=""> <br>
+                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -191,7 +191,7 @@
         <div class="row">
           <div class="col-md-4">
             <a href="">
-              <img src="images/location.png" alt="">
+              <img src="{% static 'images/ location..png' %}" alt="">
               <span>
                 Passages of Lorem Ipsum available
               </span>
@@ -199,7 +199,7 @@
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="images/call.png" alt="">
+              <img src="{% static 'images/ call..png' %}" alt="">
               <span>
                 Call : +012334567890
               </span>
@@ -207,7 +207,7 @@
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="images/mail.png" alt="">
+              <img src="{% static 'images/ mail..png' %}" alt="">
               <span>
                 demo@gmail.com
               </span>
@@ -230,22 +230,22 @@
           <div class="info_social">
             <div>
               <a href="">
-                <img src="images/facebook-logo-button.png" alt="">
+                <img src="{% static 'images/ facebook-logo-button..png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/twitter-logo-button.png" alt="">
+                <img src="{% static 'images/ twitter-logo-button..png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/linkedin.png" alt="">
+                <img src="{% static 'images/ linkedin..png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/instagram.png" alt="">
+                <img src="{% static 'images/ instagram..png' %}" alt="">
               </a>
             </div>
           </div>
@@ -268,9 +268,9 @@
   <!-- footer section -->
 
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 
 </body>
 
