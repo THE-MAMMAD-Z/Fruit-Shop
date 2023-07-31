@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'fruit',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,12 @@ STATICFILES_DIRS = [BASE_DIR/'asset/']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media/'
 
+LOGOUT_REDIRECT_URL = 'home:home'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LOGIN_URL='login/'
+# LOGIN_REDIRECT_URL='home:home'

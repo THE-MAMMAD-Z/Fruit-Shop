@@ -61,7 +61,7 @@
                   <a class="nav-link" href="{% url 'home:about' %}">About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'fruit:fruits' %}">Our Fruit </a>
+                  <a class="nav-link" href="{% url 'fruit:good-fruit' %}">Our Fruit </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'fruit:testmonial' %}">Testimonial</a>
@@ -70,7 +70,11 @@
                   <a class="nav-link" href="{% url 'home:contact' %}">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Login</a>
+                  {%if user.is_authenticated%}
+                      <a class="nav-link" href="{% url 'account:logout' %}">Logout</a>
+                  {% else %}
+                      <a class="nav-link" href="{% url 'account:loginn' %}">Login</a>
+                  {% endif %}
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -101,18 +105,18 @@
           <div class="carousel-item active">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="{% static 'images/ client-img..png' %}" alt="">
+                <img src="{% static 'images/client-img.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="{% static 'images/ left-quote..png' %}" alt="">
+                  <img src="{% static 'images/left-quote.png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
+                  <img src="{% static 'images/right-quote.png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -123,18 +127,18 @@
           <div class="carousel-item">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="{% static 'images/ client-img..png' %}" alt="">
+                <img src="{% static 'images/client-img.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="{% static 'images/ left-quote..png' %}" alt="">
+                  <img src="{% static 'images/left-quote.png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
+                  <img src="{% static 'images/right-quote.png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -145,18 +149,18 @@
           <div class="carousel-item">
             <div class="client_container layout_padding-top">
               <div class="img-box">
-                <img src="{% static 'images/ client-img..png' %}" alt="">
+                <img src="{% static 'images/client-img.png' %}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
                   Jone Mark
                 </h5>
                 <p>
-                  <img src="{% static 'images/ left-quote..png' %}" alt="">
+                  <img src="{% static 'images/left-quote.png' %}" alt="">
                   <span>
                     Lorem ipsum dolor sit amet,
                   </span>
-                  <img src="{% static 'images/ right-quote..png' %}" alt=""> <br>
+                  <img src="{% static 'images/right-quote.png' %}" alt=""> <br>
                   consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                   veniam, quis nostrud exercitation ullamco laboris ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -191,7 +195,7 @@
         <div class="row">
           <div class="col-md-4">
             <a href="">
-              <img src="{% static 'images/ location..png' %}" alt="">
+              <img src="{% static 'images/location.png' %}" alt="">
               <span>
                 Passages of Lorem Ipsum available
               </span>
@@ -199,7 +203,7 @@
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="{% static 'images/ call..png' %}" alt="">
+              <img src="{% static 'images/call.png' %}" alt="">
               <span>
                 Call : +012334567890
               </span>
@@ -207,7 +211,7 @@
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="{% static 'images/ mail..png' %}" alt="">
+              <img src="{% static 'images/mail.png' %}" alt="">
               <span>
                 demo@gmail.com
               </span>
@@ -230,22 +234,22 @@
           <div class="info_social">
             <div>
               <a href="">
-                <img src="{% static 'images/ facebook-logo-button..png' %}" alt="">
+                <img src="{% static 'images/facebook-logo-button.png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="{% static 'images/ twitter-logo-button..png' %}" alt="">
+                <img src="{% static 'images/twitter-logo-button.png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="{% static 'images/ linkedin..png' %}" alt="">
+                <img src="{% static 'images/linkedin.png' %}" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="{% static 'images/ instagram..png' %}" alt="">
+                <img src="{% static 'images/instagram.png' %}" alt="">
               </a>
             </div>
           </div>

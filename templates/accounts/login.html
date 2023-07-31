@@ -1,0 +1,44 @@
+{% extends 'home/base.html' %}
+<!DOCTYPE html>
+{% load static %}
+
+{% block header %}
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <div class="brand_box">
+      <a class="navbar-brand" href="index.html">
+        <span>
+          Ninom
+        </span>
+      </a>
+    </div>
+    <!-- end header section -->
+  </div>
+{% endblock header %}
+
+{% block body %}
+  <!-- about section -->
+
+  <center> <h1> User Login Form </h1> </center>   
+    <form method="post"> 
+      {% csrf_token %}
+      <P style='color:red; text-align: center; font-size: x-large;'>{{errorMessage}}</p>
+        
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
+            <button type="submit">Login</button>   
+            <input type="checkbox" checked="checked"> Remember me   
+            <button type="button" class="cancelbtn"> Cancel</button>   
+            Forgot <a href="#"> password? </a>   
+        </div>   
+    </form> 
+
+  <!-- end about section -->
+  {% endblock body %}
+  <!-- info section -->
+
+  
