@@ -7,8 +7,8 @@ class Profile(models.Model):
 
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name="profile")
     phone=models.IntegerField(default=0)
-    email=models.EmailField(default=None)
-    address=models.TextField(default=None)
+    email=models.EmailField()
+    address=models.TextField()
 
     # name=models.CharField(max_length=100)
     # family=models.CharField(max_length=100)
