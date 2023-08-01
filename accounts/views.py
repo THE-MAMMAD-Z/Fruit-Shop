@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login ,logout
 from django.urls import reverse
 import fruit
 from django.conf import settings
-from .forms import ProfileRegisterForm
+from .forms import *
 # Create your views here.
 
 def loginn(request):
@@ -84,3 +84,23 @@ def profileregister(request):
 
 
 
+def ProfileEdit(request):
+    if request.method=="POST":
+        profileEditForm = ProfileEditForm(request.POST,request.FILES,instance=request.user.profile)
+        userEditForm=UserEditForm(request.POST,instance=request.user)
+        if profileEditForm.is_valid and userEditForm.is_valid:
+            profileEditForm.save()
+            userEditForm.save()
+            return HttpResponseRedirect(reverse("account:profile"))
+    else:
+        profileEditForm=ProfileEditForm(instance=request.user.profile)
+        userEditForm=UserEditForm(instance=request.user)
+
+
+    context={
+        "profileEditForm":profileEditForm,
+        'userEditForm':userEditForm,
+        'profileImage':request.user.profile.profileimage,
+    }
+
+    return render(request,"accounts/profileEdit.html",context)

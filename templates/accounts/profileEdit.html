@@ -30,72 +30,61 @@
   <link href="{% static 'css/login.css' %} " rel="stylesheet" />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-  }
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-  header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-  }
+    header {
+        background-color: #333;
+        color: #d50a69;
+        padding: 20px;
+        text-align: center;
+    }
 
-  .profile-container {
-      max-width: 800px;
-      margin: 40px auto;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 20px;
-  }
+    .registration-form {
+        max-width: 500px;
+        margin: 40px auto;
+        border: 1px solid #c90b0b;
+        color: #007bff;
+        border-radius: 8px;
+        padding: 20px;
+    }
 
-  .profile-picture {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      display: block;
-      background-color: #ccc;
-  }
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-  .profile-name {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 10px;
-  }
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
 
-  .profile-bio {
-      font-size: 16px;
-      text-align: center;
-      margin-bottom: 20px;
-  }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #880dda;
+        border-radius: 5px;
+        font-size: 16px;
+    }
 
-  .profile-info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-  }
+    .form-group input[type="submit"] {
+        background-color: #007bff;
+        color: #4ecf08;
+        border:#4ecf08;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-  .profile-info span {
-      font-weight: bold;
-  }
+    .form-group input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
 
-  .profile-button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-  }
-
-  .profile-button:hover {
-      background-color: #0056b3;
-  }
+    form{
+      border: #d50a69;
+    }
   </style>
 
 </head>
@@ -161,35 +150,72 @@
 
 
 
-<div class="profile-container">
-    <img class="profile-picture" src="{{ profile.profileimage.url }}" alt="Profile Picture">
-    <h2 class="profile-name">{{ profile.user.get_full_name }} </h2>
-    <!-- <p class="profile-bio">Web Developer | Frontend Enthusiast</p> -->
 
-    <div class="profile-info">
-        <span>Email:</span>
-        <span>{{ profile.email }}</span>
-    </div>
+  <div class="registration-form">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
 
-    <div class="profile-info">
-        <span>Location:</span>
-        <span>{{ profile.address }}</span>
-    </div>
+      <!-- <div class="mainborder">
+        <div class="row">
+          <p class="mylable">username : {{ formData.username }}</p>
+          <p class="mylable">Name : {{ formData.first_name }}</p>
+          <p class="mylable">Last name : {{ formData.last_name }}</p>
+          <p class="mylable">phone : {{ formData.phone }}</p>
+          <p class="mylable">email : {{ formData.email }}</p>
+          <p class="mylable">address : {{ formData.address }}</p>
+          <p class="mylable">Gender : {{ formData.Gender }}</p>
+          <p class="mylable">password : {{ formData.password }}</p>
+          {{ formData.profileimage }}
+        </div>
+        <div class="buttonborder">
+          <button type="submit" class="btn btn-success">register</button>
 
-    <div class="profile-info">
-        <span>Phone Number:</span>
-        <span>{{ profile.phone }}</span>
-    </div>
+        </div>
+      </div> -->
 
-    <div class="profile-info">
-        <span>Gender:</span>
-          <span>{{profile.get_Gender_display }}</span>
-    </div>
-    <a href="{% url 'account:profileedit' %}">
-      <button class="profile-button">Edit Profile</button>
-    </a>
+
+
+      
+
+        <div class="form-group">
+            <label for="first_name">Name:{{ userEditForm.first_name }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Family: {{ userEditForm.last_name }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email: {{ userEditForm.email }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone: {{ profileEditForm.phone }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address: {{ profileEditForm.address }}</label>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender: {{ profileEditForm.Gender }}</label>
+        </div>
+
+        {% comment %} <div class="form-group">
+            <label for="password">Password: {{ profileEditForm.password }}</label>
+        </div> {% endcomment %}
+
+        <div class="form-group">
+            <img style="max-width:200px " src='{{ profileImage.url }}'>
+            <label for="profileimage">Profile Image:</label>
+            {{ profileEditForm.profileimage }}
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div> 
+    </form>
 </div>
-
 
 {% comment %} footer and info {% endcomment %}
 <section class="info_section layout_padding">
@@ -287,8 +313,3 @@
 </body>
 
 </html>
-{% comment %} <center> <h1> Profile user </h1> </center>   
-    <p>name and family name : {{ profile.user.get_full_name }} </p>
-    <p>gender : {{ profile.get_Gender_display }} </p>
-    <p>credit : </p>
-    <img src="{{ profile.profileimage.url }}" alt="">     {% endcomment %}

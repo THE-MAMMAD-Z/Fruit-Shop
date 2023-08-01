@@ -1,5 +1,7 @@
 from django import forms
 from accounts.models import Profile
+from django.contrib.auth.forms import UserChangeForm
+
 
 class ProfileRegisterForm(forms.ModelForm):
     first_name = forms.CharField(max_length=100)
@@ -20,7 +22,7 @@ class ProfileEditForm(forms.ModelForm):
         fields=['profileimage','Gender','phone','address']
 
 
-# class UserEditForm(UserChangeForm):
-#     class Meta(UserChangeForm.Meta):
-#         fields=['profileimage','Gender','phone','address']
-#     password=None
+class UserEditForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        fields=['first_name','last_name','email']
+    password=None
