@@ -29,3 +29,8 @@ def fruits(request) :
     
 def testmonial(request) : 
     return render(request,'fruit/testimonial.html')
+
+
+def f_detail(request,num) :
+    forot = Fruit.objects.get(pk=num)
+    return render(request,"fruit/fruit_detail.html",{"fruit":forot})
