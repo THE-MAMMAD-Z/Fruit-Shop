@@ -9,8 +9,7 @@ class ProfileRegisterForm(forms.ModelForm):
     username= forms.CharField( max_length=100)
     password = forms.CharField(widget=forms.PasswordInput)
     email= forms.EmailField(widget=forms.EmailInput)
-    # phone = forms.IntegerField()
-    # address= forms.TimeField()
+    
 
     class Meta:
         model = Profile

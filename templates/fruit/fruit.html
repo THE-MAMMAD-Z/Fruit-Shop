@@ -1,6 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-  {% load static %}
+  
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -185,7 +186,7 @@
           {% for item in fruits%}
 
             <div class="box">
-              <img src="{{ item.image.url }}" alt="">
+              <img src="{{ item.image.url }}" alt=""> 
               <div class="link_box">
                 <h5>
                   {{item.name}}

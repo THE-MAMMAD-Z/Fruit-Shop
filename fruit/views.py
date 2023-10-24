@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from fruit.forms import SearchForm
 
 
-@login_required
+
 def fruits(request) : 
         search=SearchForm(request.GET)
         if search.is_valid():
@@ -24,8 +24,7 @@ def fruits(request) :
         }
 
         return render(request,'fruit/fruit.html',context)
-    # else:
-    #     return HttpResponseRedirect(reverse("account:loginn"))
+    
     
 def testmonial(request) : 
     return render(request,'fruit/testimonial.html')

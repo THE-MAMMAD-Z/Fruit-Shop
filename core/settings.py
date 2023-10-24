@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -159,3 +159,10 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.example.com'  # Your SMTP server
+EMAIL_PORT = 587  # Your SMTP server's port (587 for TLS, 465 for SSL)
+EMAIL_USE_TLS = True  # Use TLS if your SMTP server requires it
+EMAIL_HOST_USER = 'shir34@yahoo.com'  # Your email address
+EMAIL_HOST_PASSWORD = 'sezar1381'  # Your email password
